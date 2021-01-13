@@ -1,0 +1,46 @@
+<div class="container-fluid" style="background-color:aqua; height: 100vh;">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+
+
+            <h1 class="text-center text-dark p-2 mt-4">Modificar operaciòn</h1>
+{{!-- Fijarse el enctype si esta bien ese metodo --}}
+
+         {{#each data}}
+
+             <form action="/operaciones/modificarOperacion/{{id}}" method="post" enctype ="multipart/form-data">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Concepto</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" name="concepto" value="{{concepto}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Monto</label>
+                    <input type="number" class="form-control" id="formGroupExampleInput2" name="monto" value="{{monto}}"required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput3">Fecha</label>
+                    <input type="date" class="form-control" id="formGroupExampleInput3" name="fecha" value="{{fecha}}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput3">Tipo</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput3" name="tipo" value="{{tipo}}"required>
+                </div>
+
+                
+                <button type="submit" class="btn btn-secondary btn-block mt-5">Modificar</button>
+
+                <a href="/operaciones" class="btn btn-primary btn-block mt-4">Retornar</a>
+
+
+            </form>   
+
+              {{/each}}  
+
+
+
+
+
+        </div>
+    </div>
+</div>
