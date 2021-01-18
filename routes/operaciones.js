@@ -28,7 +28,7 @@ router.post('/altaOperacion', async (req, res)=>{
     };
     
     await pool.query('INSERT INTO presupuesto set ?' , [newOperation]);
-    res.render('success',{mensaje:"Operaciòn exitosa"});
+    res.render('success',{mensaje:"Operación exitosa"});
     
     });
 

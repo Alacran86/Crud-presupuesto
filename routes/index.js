@@ -13,13 +13,14 @@ router.get('/', async function(req, res, next) {
 //chequear si llegan los datos al mail
 router.post('/', async function(req, res, next) {
   
-  let texto = `Nombre: ${req.body.nombre} \nOcupación: ${req.body.ocupación} \nEmail: ${req.body.email} \nMensaje: ${req.body.comentario}`;
+  let texto = `Nombre: ${req.body.nombre} \nSubject: ${req.body.subject} \nEmail: ${req.body.email} \nMensaje: ${req.body.comentario}`;
 
 
   let info =  await mail.main(texto);
   
   res.render('successMail', {mensaje: "Mail enviado correctamente, gracias por ayudarnos a mejorar"});
 });
+
 
 
 module.exports = router;

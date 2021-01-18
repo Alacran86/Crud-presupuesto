@@ -1,54 +1,125 @@
-<div class="container d-flex align-items-center justify-content-center">
-  <div class="row">
-    <div class="col-12">
+                {{!-- Comienzo del Navbar --}}
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div class="container-fluid">
-          <a class="navbar-brand">Administrando tu dinero $$</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-2 ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/authentication/signup">Registrarse</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/authentication/signin">Login</a>
-              </li>
-            </ul>
+ <div class="container d-flex justify-content-center" id="banner">
+        <div class="row">
+        <div class="col-12 p-2 mt-5">
+   
+<nav class="navbar navbar-expand-lg navbar-dark text-white bg-dark">
+  <div class="container-fluid">
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" id="arriba">Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#info">Acerca de</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" href="#testimonios">Testimonios</a>
+        </li> 
+          </a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactanos">Contactanos</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/authentication/signin">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/authentication/signup">Registrarse</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+       </div>
+        </div>
+                                  {{!-- Fin Navbar --}}
+
+  {{!-- Comienzo del Body --}}
+
+
+
+       <div class="container d-flex align-items-center text-center justify-content-center" id="banner">
+        <div class="row">
+        <div class="col-12 p-2 mt-5">
+          <div data-aos="fade-right"><h1>Bienvenido a la aplicación Expense Control</h1>
+          </div>
+          <br><br>
+                 <div data-aos="fade-left">
+                   <img src="images/dinero2.jpg" alt="" id="dinero2">
+                   </div> 
+          <br>
+          <section id="about">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-6">
+            <div class="about-img">
+              <img src="images/foto cara.jpg" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-6">
+            <div class="about-content">
+              <h2 id="info">Sobre Nosotros</h2>
+              <h3>Martin Leonardo Ruiz CEO</h3>
+              
+              <p>Parte de la planificación de las finanzas es saber responder el trió dinámico cuánto ganamos, cuánto gastamos y en qué gastamos. Esta última es quizás la más difícil de descifrar al administrar tu dinero. Ya que como lo hemos mencionado en otros artículos el dinero que entra al bolsillo, dinero que se va.
+              El tema aquí es en qué se va, te haz preguntado en ¿Qué gasté esto? o en ¿Qué se me fue lo otro? ¿ Por qué nunca me alcanza el sueldo?
+              Si eres de los que no sabe en qué gasta sus ingresos, o necesitas planificar tu presupuesto para poder una compra, ahora con <strong>$$Expense Control$$</strong> vas a poder hacerlo mas fácil.</p>
+              <ul>
+                <li><i class="ion-android-checkmark-circle"></i>Ver el movimientos de las ultimas operaciones realizadas hasta la fecha.</li>
+                <li><i class="ion-android-checkmark-circle"></i>Cargar ingresos/egresos de dinero y guardarlos en una base de datos.</li>
+                <li><i class="ion-android-checkmark-circle"></i>Editar o eliminar operaciones asi como tambien ver un balance actual de tu cuenta personal.</li>
+                <li><i class="ion-android-checkmark-circle"></i>Registrarte o loguearte con un usuario para guardar tus sesiones asi como las operaciones que realices</li>
+                </ul>
+            </div>
           </div>
         </div>
-    </div>
-
-      {{!--Agregar clases a la columna y filas  --}}
-      {{!-- Fijarse como hacer para q en sql solo se muestre las 10 ultimas operaciones y una fila con el balance actual --}}
-
+      </div>
+          
+       </div>
+       </div>
+        </div>
+        
+          
     <div class="container d-flex align-items-center justify-content-center">
       <div class="row">
         <div class="col-12 mt-5">
 
-          <h1>Ultimas operaciones registradas</h1>
-          <table border="4" class="table table-responsive">
-            <tr border=" class="table-dark">
+          <div class="container d-flex align-items-center justify-content-center">
+            <div class="row">
+              <div class="col-12 mt-2">
+
+              
+              </div>
+            </div>
+          </div>
+          <h1 class="text-center mt-1">Ultimas operaciones registradas</h1>
+          <table border="4" class="table table-responsive" id="tabla">
+            <tr border="3">
               <td>Operación</td>
               <td>Concepto</td>
               <td>Monto</td>
               <td>Fecha</td>
               <td>Tipo</td>
-              
+
             </tr>
             {{#each data}}
-            <tr class="table-info">
+            <tr border="3">
               <td>{{id}} </td>
               <td>{{concepto}}</td>
               <td>{{monto}}</td>
               <td>{{fecha}}</td>
               <td>{{tipo}}</td>
-           </tr>
+            </tr>
             {{/each}}
           </table>
 
@@ -56,69 +127,184 @@
       </div>
     </div>
 
-<div class="container d-flex align-items-center justify-content-center">
-     <a href="/operaciones" class="btn btn-dark m-3">Nueva operaciòn</a>
-</div>
+    <div class="container d-flex align-items-center justify-content-center">
+      <a href="/operaciones" class="btn btn-dark m-3">Nueva operación</a>
+    </div>
 
-<div class="container d-flex align-items-center justify-content-center">
-  <div class="row mt-2">
-  <div class="col">
-    <div class="jumbotron text-center">
-        <h1 class="display-4 text-dark">Alguna Sugerencia??</h1>
-        <p class="lead">Mandanos un comentario para mejorar la experiencia de usuario</p>
-        
+                  
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Comentenos su Inquietud</button>
-      
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    {{!--  Testimonials --}}
+
+   <section id="testimonials">
+      <div class="container">
+
+        <header class="section-header text-center">
+          <h3 id="testimonios"><u>Testimonios</u></h3>
+        </header>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+
+            <div class="owl-carousel testimonials-carousel wow fadeInUp">
+    
+              <div class="testimonial-item">
+                <img src="images/testimonial-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                </p>
+              </div>
+    
+              <div class="testimonial-item">
+                <img src="images/testimonial-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                </p>
+              </div>
+    
+              <div class="testimonial-item">
+                <img src="images/testimonial-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                </p>
+              </div>
+    
+              <div class="testimonial-item">
+                <img src="images/testimonial-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                </p>
+              </div>
+
             </div>
-            <div class="modal-body">
-              <form action="/" method="post" >
-                <div class="form-group">
-                  <label for="recipient-name" 
-                  class="col-form-label">Email (*)</label>
-                  <input type="text" name="email" class="form-control" id="recipient-name">
-                </div>
 
-                <div class="form-group">
-                  <label for="recipient-name" 
-                  class="col-form-label">Nombre (*)</label>
-                  <input type="text" name="nombre" class="form-control" id="recipient-name">
-                </div>
-
-                <div class="form-group">
-                  <label for="recipient-name" 
-                  class="col-form-label">Ocupación (*)</label>
-                  <input type="text" name="ocupación" class="form-control" id="recipient-name">
-                </div>
-                
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Mensaje (*)</label>
-                  <textarea class="form-control"  name="comentario" id="message-text" rows="5"></textarea>
-                </div>
-
-
-                <input type="submit" class="btn btn-primary"  value="Enviar">
-
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              
-            </div> 
           </div>
         </div>
+
+
       </div>
+    </section>
+{{!-- Fin del Body --}}
 
-    </div>
+
+   {{!-- Comienzo del Footer --}}
+
+   
+  <footer id="footer" class="section-bg">
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                  <div class="footer-info">
+                    <h3>Expense Control</h3>
+                    <p>Es una aplicación sin fines de lucro creada solo y exclusivamente para facilitar la vida de todos aquellos que sean desorganizados con el dinero o que quieran llevar un control estricto de sus gastos.</p>
+                  </div>
+
+                  <div class="footer-newsletter">
+                    <h4>Our Newsletter</h4>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem.</p>
+                    <form action="" method="post">
+                      <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                  </div>
+
+                </div>
+
+      <div class="col-sm-6">
+                  <div class="footer-links">
+                    <h4>Enlaces útiles</h4>
+                    <ul>
+                      <li><a href="#arriba">Home</a></li>
+                      <li><a href="#info">About us</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Terms of service</a></li>
+                      <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="footer-links" id="contactanos">
+                    <h4>Contactanos</h4>
+                    <p>
+                      Miguel Cane <br>
+                      Marcos Paz, Provincia de Buenos Aires<br>
+                      Argentina <br>
+                      <strong>Telefono:</strong> +1 5589 55488 55<br>
+                      <strong>Email:</strong> info@example.com<br>
+                    </p>
+                  </div>
+
+                  <div class="social-links">
+                    <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                  </div>
+
+                </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="form">
+              
+              <h4>Mandanos un mensaje</h4>
+              <p>Tenes alguna sugerencia para mejorar la app?? escribinos!</p>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                   
+                  <input type="text" name="nombre" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="comentario" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+              </form>
+            </div>
+
+          </div>
+
+          
+
+        </div>
+
+      </div>
     </div>
 
-  </div>
-</div>
+<div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>Expense Control</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+<script>
+      AOS.init();
+    </script>
+        {{!-- Fin del Footer --}}
